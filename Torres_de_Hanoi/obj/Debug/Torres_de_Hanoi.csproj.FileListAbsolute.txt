@@ -1,0 +1,8 @@
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.AssemblyReference.cache
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.SuggestedBindingRedirects.cache
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+C:\Repositorios\torres-de-hanoi-2023\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
