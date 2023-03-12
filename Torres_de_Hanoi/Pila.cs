@@ -24,7 +24,8 @@ namespace Torres_de_Hanoi
 
         //Devuelve el tamaño de la pila
         public int Size(){
-            return Discos.Count;
+            int sol = Discos.Count;
+            return sol;
         }
 
         //Devuelve el valor del disco que está arriba del todo
@@ -38,6 +39,10 @@ namespace Torres_de_Hanoi
             for (int i=0; i<tam; i++){
                 this.Discos.Add(new Disco(i));  
             }
+        }
+
+        //Constructor de Pilas vacías (Aux, fin)
+        public Pila(){
         }
 
         //Pone un disco dentro de una pila
@@ -57,6 +62,14 @@ namespace Torres_de_Hanoi
                 return true;
             }
             return false;
+        }
+
+        //Muestra los elementos de la pila
+        public void mostrar(String pila){
+           Console.WriteLine("Los objetos de la pila " + pila + " son:");
+            for (int i = this.Size() - 1; i >= 0; i--){
+                Console.WriteLine(Discos[i].getValor());
+            }
         }
 
     }
