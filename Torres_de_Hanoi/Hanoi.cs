@@ -48,7 +48,7 @@ namespace Torres_de_Hanoi
         }
 
         //Obtiene el numero de movimientos hata solucinarlo
-        public int iterativo(int n, Pila ini, Pila fin, Pila aux){
+        public int iterativo(int n, Pila ini, Pila aux, Pila fin){
 
             //Sol numero de movimientos
             int sol = 0;
@@ -143,9 +143,21 @@ namespace Torres_de_Hanoi
             }
           
         }
-        public int recursivo(int n, Pila ini, Pila fin, Pila aux)
-        {
-            return 0;
+        public int recursivo(int n, Pila ini, Pila aux, Pila fin){
+            int sol=0;
+            Console.WriteLine("entro");
+            if (n==1){
+                mover_disco(ini, fin);
+                sol++;
+            }
+            else{
+                Console.WriteLine(sol);
+                sol += recursivo(n - 1, ini, aux, fin);
+                mover_disco(ini, fin);
+                sol++;
+                sol += recursivo(n - 1, aux, fin, ini);
+            }
+            return sol;
         }
     }
 }

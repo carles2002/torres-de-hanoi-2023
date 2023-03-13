@@ -16,8 +16,8 @@ namespace Torres_de_Hanoi
             Console.WriteLine("Vas a jugar con " + discos + " discos");
 
             Console.WriteLine("Quieres jugar en modo iterativo o recursivo i/r");
-
-            if (Console.ReadLine()=="i"){
+            String res = Console.ReadLine();
+            if (res == "i"){
                 Console.WriteLine("Vas a jugar en el modo iterativo con "+discos+" discos");
                 Console.WriteLine("¿Quieres activar el modo paso a paso? Se recomienda desactivar para discos mayores de 9 y/n");
                 if (Console.ReadLine() == "y"){
@@ -36,8 +36,18 @@ namespace Torres_de_Hanoi
                 Console.WriteLine("Los movimientos necesarios han sido: " + sol);
 
             }
-            else if (Console.ReadLine() == "r"){
-                Console.WriteLine("Aún no implementado");
+            else if (res == "r"){
+                Console.WriteLine("RECURSIVO");
+
+                Pila INI = new Pila(discos);
+                Pila AUX = new Pila();
+                Pila FIN = new Pila();
+
+                Hanoi Hanoi = new Hanoi(paso);
+
+                int sol = Hanoi.recursivo(discos, INI, AUX, FIN);
+                Console.WriteLine("Los movimientos necesarios han sido: " + sol);
+
             }
 
            
