@@ -9,9 +9,11 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-        /*TODO: Implementar métodos*/
-        //Constructor vacío
-        public Hanoi() { }
+        bool paso = false;
+        //Constructor 
+        public Hanoi(bool x) {
+            paso = x;
+        }
 
         //Mueve los discos de una pila a otra
         public void mover_disco(Pila a, Pila b){
@@ -46,63 +48,104 @@ namespace Torres_de_Hanoi
         }
 
         //Obtiene el numero de movimientos hata solucinarlo
-        public int iterativo(int n, Pila ini, Pila fin, Pila aux)
-        {
+        public int iterativo(int n, Pila ini, Pila fin, Pila aux){
+
             //Sol numero de movimientos
             int sol = 0;
-            Console.WriteLine(n);
 
-            //Si n(numero discos) es impar
-            if(n % 2 != 0){
-              
-                
-               
-                while (ini.isEmpty() == false || aux.isEmpty() == false){
+            //Si los pasos están activados
+            if (paso==true){
+                //Si n(numero discos) es impar
+                if (n % 2 != 0) {
 
-                    ini.mostrar3(aux, fin);
+                    while (ini.isEmpty() == false || aux.isEmpty() == false) {
+
+                        ini.mostrar3(aux, fin);
+
+                        mover_disco(ini, fin);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+
+                        mover_disco(ini, aux);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(aux, fin);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+                    }
+
+                } else if (n % 2 == 0) {
                    
+                    while (ini.isEmpty() == false || aux.isEmpty() == false){
 
-                    mover_disco(ini, fin);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size()==n) { return sol; };
+                        ini.mostrar3(aux, fin);
 
-                    
-                    mover_disco(ini, aux);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size() == n) { return sol; };
-                   
-                    mover_disco(aux, fin);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size() == n) { return sol; };
+                        mover_disco(ini, aux);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(ini, fin);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(aux, fin);
+                        ini.mostrar3(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+                    }
                 }
-                
-            }else if(n % 2 == 0) {
-               ;
-                while (ini.isEmpty() == false || aux.isEmpty() == false)
-                {
-                    ini.mostrar3(aux, fin);
-                  
-                    mover_disco(ini, aux);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size() == n) { return sol; };
-
-                    mover_disco(ini, fin);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size() == n) { return sol; };
-
-                    mover_disco(aux, fin);
-                    ini.mostrar3(aux, fin);
-                    sol++;
-                    if (fin.Size() == n) { return sol; };
-                }
+                return sol;
             }
-            return sol;
-        }
+            else{
+                if (n % 2 != 0){
 
+                    while (ini.isEmpty() == false || aux.isEmpty() == false){
+
+                        mover_disco(ini, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+
+                        mover_disco(ini, aux);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+                    }
+
+                }
+                else if (n % 2 == 0){
+                    while (ini.isEmpty() == false || aux.isEmpty() == false){
+ 
+                        mover_disco(ini, aux);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(ini, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+
+                        mover_disco(aux, fin);
+                        sol++;
+                        if (fin.Size() == n) { return sol; };
+                    }
+                }
+                return sol;
+            }
+          
+        }
+        public int recursivo(int n, Pila ini, Pila fin, Pila aux)
+        {
+            return 0;
+        }
     }
 }
