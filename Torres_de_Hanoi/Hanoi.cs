@@ -47,7 +47,7 @@ namespace Torres_de_Hanoi
             }
         }
 
-        //Obtiene el numero de movimientos hata solucinarlo modo iterativo
+        //Obtiene el numero de movimientos hasta solucinarlo modo iterativo
         public int iterativo(int n, Pila ini, Pila aux, Pila fin){
 
             //Sol numero de movimientos
@@ -111,39 +111,45 @@ namespace Torres_de_Hanoi
                         mover_disco(ini, fin);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
 
 
                         mover_disco(ini, aux);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
 
                         mover_disco(aux, fin);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
                     }
 
                 }
                 else if (n % 2 == 0){
                     while (ini.isEmpty() == false || aux.isEmpty() == false){
- 
+                       
                         mover_disco(ini, aux);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
 
                         mover_disco(ini, fin);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
 
                         mover_disco(aux, fin);
                         sol++;
                         if (fin.Size() == n) { return sol; };
+                        Console.Write(".");
                     }
                 }
                 return sol;
             }
           
         }
-        //Obtiene el numero de movimientos hata solucinarlo modo recursivo
+        //Obtiene el numero de movimientos hasta solucinarlo modo recursivo
         public int recursivo(int n, Pila ini, Pila aux, Pila fin){
             int sol=0;
             if (n == 1){

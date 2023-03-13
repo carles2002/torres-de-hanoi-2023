@@ -31,7 +31,7 @@ namespace Torres_de_Hanoi
             }
         }
 
-        //Crea una pila con X discos
+        //Crea una pila con X discos (ini)
         public Pila(int tam){
             for (int i=0; i<tam; i++){
                 this.Discos.Add(new Disco(i));  

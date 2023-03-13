@@ -55,8 +55,6 @@ namespace Torres_de_Hanoi
 
             }
 
-           
-
             // Keep the console window open in debug mode.
             Console.ReadKey();
         }
